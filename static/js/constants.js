@@ -14,9 +14,9 @@ export const colorMap = {
 const production = false;
 
 export const websocketUrl = production
-  ? "wss://websocket.tenthousandpixels.com/ws"
+  ? "wss://pixel.lakeofcolors.com/ws"
   : "ws://localhost:8080/ws";
 
 export const pixelsUrl = production
-  ? "https://websocket.tenthousandpixels.com/pixels"
+  ? "https://pixel.lakeofcolors.com/pixels"
   : "http://localhost:8080/pixels";

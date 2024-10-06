@@ -89,7 +89,12 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 10240,
 	CheckOrigin: func(r *http.Request) bool {
 		origin := r.Header.Get("Origin")
-		return origin == "http://localhost:8080"
+		environment := os.Getenv("ENVIRONMENT")
+		if environment == "development" {
+			return origin == "http://localhost:8080"
+		} else {
+			return origin == "https://pixel.lakeofcolors.com"
+		}
 	},
 }
 
